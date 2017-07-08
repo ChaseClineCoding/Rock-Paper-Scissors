@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick=plyrChosR()>Rock</button>
+
+<button onclick=plyrChosP()>Paper</button>
+
+<button onclick=plyrChosS()>Scissors</button>
+
+<div id="result"></div>
+
+<script>
+function plyrChosR() {
+	var aiChoice = Math.floor(Math.random() * 3);
+	if (aiChoice == 0) {
+		outcome = "Your opponent chose rock, it's a tie!";
+	} else if (aiChoice == 1) {
+		outcome = "Your opponent chose paper, you lose!";
+	} else {
+		outcome = "Your opponent chose scissors, you win!";
+	}
+document.getElementById("result").innerHTML = outcome;
+}
+
+
+function plyrChosP() {
+	var aiChoice = Math.floor(Math.random() * 3);
+	if (aiChoice == 0) {
+		outcome = "Your opponent chose rock, you win!";
+	} else if (aiChoice == 1) {
+		outcome = "Your opponent chose paper, it's a tie!";
+	} else {
+		outcome = "Your opponent chose scissors, you lose!";
+	}
+document.getElementById("result").innerHTML = outcome;
+}
+
+
+function plyrChosS() {
+	var aiChoice = Math.floor(Math.random() * 3);
+	if (aiChoice == 0) {
+		outcome = "Your opponent chose rock, you lose!";
+	} else if (aiChoice == 1) {
+		outcome = "Your opponent chose paper, you win!";
+	} else {
+		outcome = "Your opponent chose scissors, it's a tie!";
+	}
+document.getElementById("result").innerHTML = outcome;
+}
+</script>
+
+</body>
+</html>

@@ -1,53 +1,123 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+body {
+	background-color: black;
+	color: white;
+}
+
+.center {
+	text-align: center;
+	padding: 100px 0 0;
+}
+</style>
+</head>
+
 <body>
 
+<div class="center">
 <button onclick=plyrChosR()>Rock</button>
 
 <button onclick=plyrChosP()>Paper</button>
 
-<button onclick=plyrChosS()>Scissors</button>
+<button onclick=plyrChosSc()>Scissors</button>
 
-<div id="result"></div>
+<button onclick=plyrChosL()>Lizard</button>
+
+<button onclick=plyrChosSp()>Spock</button>
+</div>
+
+<div id="result" class="center"></div>
 
 <script>
 function plyrChosR() {
-	var aiChoice = Math.floor(Math.random() * 3);
+	var aiChoice = Math.floor(Math.random() * 5);
 	if (aiChoice == 0) {
-		outcome = "Your opponent chose rock, it's a tie!";
+		outcome = "Your opponent chose rock. <br>It's a tie!";
 	} else if (aiChoice == 1) {
-		outcome = "Your opponent chose paper, you lose!";
+		outcome = "Your opponent chose paper. <br>Paper covers rock. <br>You lose!";
+	} else if (aiChoice == 2) {
+		outcome = "Your opponent chose scissors. <br>Rock crushes scissors. <br>You win!";
+	} else if (aiChoice == 3) {
+		outcome = "Your opponent chose lizard. <br>Rock crushes lizard. <br>You win!";
 	} else {
-		outcome = "Your opponent chose scissors, you win!";
+		outcome = "Your opponent chose Spock. <br>Spock vaporizes rock. <br>You lose!";
 	}
 document.getElementById("result").innerHTML = outcome;
 }
 
 
 function plyrChosP() {
-	var aiChoice = Math.floor(Math.random() * 3);
+	var aiChoice = Math.floor(Math.random() * 5);
 	if (aiChoice == 0) {
-		outcome = "Your opponent chose rock, you win!";
+		outcome = "Your opponent chose rock. <br>Paper covers rock. <br>You win!";
 	} else if (aiChoice == 1) {
-		outcome = "Your opponent chose paper, it's a tie!";
+		outcome = "Your opponent chose paper. <br>It's a tie!";
+	} else if (aiChoice == 2) {
+		outcome = "Your opponent chose scissors. <br>Scissors cuts paper. <br>You lose!";
+	} else if (aiChoice == 3) {
+		outcome = "Your opponent chose lizard. <br>Lizard eats paper. <br>You lose!";
 	} else {
-		outcome = "Your opponent chose scissors, you lose!";
+		outcome = "Your opponent chose Spock <br>Paper disproves Spock. <br>You win!";
 	}
 document.getElementById("result").innerHTML = outcome;
 }
 
 
-function plyrChosS() {
-	var aiChoice = Math.floor(Math.random() * 3);
+
+function plyrChosSc() {
+	var aiChoice = Math.floor(Math.random() * 5);
 	if (aiChoice == 0) {
-		outcome = "Your opponent chose rock, you lose!";
+		outcome = "Your opponent chose rock. <br>Rock crushes scissors. <br>You lose!";
 	} else if (aiChoice == 1) {
-		outcome = "Your opponent chose paper, you win!";
+		outcome = "Your opponent chose paper. <br>Scissors cuts paper. <br>You win!";
+	} else if (aiChoice == 2) {
+		outcome = "Your opponent chose scissors. <br>It's a tie!";
+	} else if (aiChoice == 3) {
+		outcome = "Your opponent chose lizard. <br>Scissors decapitates lizard. <br>You win!";
 	} else {
-		outcome = "Your opponent chose scissors, it's a tie!";
+		outcome = "Your opponent chose Spock. <br>Spock smashes scissors. <br>You lose!";
 	}
 document.getElementById("result").innerHTML = outcome;
 }
+
+
+
+function plyrChosL() {
+	var aiChoice = Math.floor(Math.random() * 5);
+	if (aiChoice == 0) {
+		outcome = "Your opponent chose rock. <br>Rock crushes lizard. <br>You lose!";
+	} else if (aiChoice == 1) {
+		outcome = "Your opponent chose paper. <br>Lizard eats paper. <br>You win!";
+	} else if (aiChoice == 2) {
+		outcome = "Your opponent chose scissors. <br>Scissors decapitates lizard. <br>You lose!";
+	} else if (aiChoice == 3) {
+		outcome = "Your opponent chose lizard. <br>It's a tie!";
+	} else {
+		outcome = "Your opponent chose Spock. <br>Lizard poisons Spock. <br>You win!";
+	}
+document.getElementById("result").innerHTML = outcome;
+}
+
+
+
+function plyrChosSp() {
+	var aiChoice = Math.floor(Math.random() * 5);
+	if (aiChoice == 0) {
+		outcome = "Your opponent chose rock. <br>Spock vaporizes rock. <br>You win!";
+	} else if (aiChoice == 1) {
+		outcome = "Your opponent chose paper. <br>Paper disproves Spock. <br>You lose!";
+	} else if (aiChoice == 2) {
+		outcome = "Your opponent chose scissors. <br>Spock smashes scissors. <br>You win!";
+	} else if (aiChoice == 3) {
+		outcome = "Your opponent chose lizard. <br>Lizard poisons Spock. <br>You lose!";
+	} else {
+		outcome = "Your opponent chose Spock. <br>It's a tie!";
+	}
+document.getElementById("result").innerHTML = outcome;
+}
+
 </script>
 
 </body>
